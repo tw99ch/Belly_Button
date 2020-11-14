@@ -99,7 +99,9 @@ function buildCharts(sample) {
     // 9. Create the layout for the bar chart. 
     var barLayout = {
     title: "Top 10 Bacteria Cultures Found",
-    yaxis: { title: "OTU ID"}
+    yaxis: { title: "OTU ID"},
+    'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+'paper_bgcolor': 'rgba(0, 0, 0, 0)',
   };
     // 10. Use Plotly to plot the data with the layout.
     Plotly.newPlot("bar", [barData], barLayout);
@@ -112,6 +114,7 @@ function buildCharts(sample) {
       marker: {
         color: sampleOtuIds,
         size: sampleValues
+        
       }
    
     };
@@ -124,9 +127,9 @@ function buildCharts(sample) {
       xaxis: { title: "OTU ID"},
       showlegend: false,
       height: 600,
-      width: 1000
-      
-      
+      width: 1000,
+      'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+'paper_bgcolor': 'rgba(0, 0, 0, 0)',
       
     };
 
@@ -147,9 +150,10 @@ function buildCharts(sample) {
       {
         domain: { x: [0, 1], y: [0, 10] },
         value: WashFREQ,
-        title: { text: "Belly Button Washing Frequenc\nScrubs per Week" },
+        title: { text: "Belly Button Washing Frequency\nScrubs per Week" },
         type: "indicator",
         mode: "gauge+number",
+        
           gauge: {
           axis: { range: [null, 10] },
           bar: { color: "black" },
@@ -163,13 +167,16 @@ function buildCharts(sample) {
           threshold: {
             thickness: 0.75,
             value: 490
+            
           }
         }
       }
     ];
     
     // 5. Create the layout for the gauge chart.
-    var gaugeLayout = { width: 600, height: 500, margin: { t: 0, b: 0 }
+    var gaugeLayout = { width: 600, height: 500, margin: { t: 0, b: 0 },
+    'plot_bgcolor': 'rgba(0, 0, 0, 0)',
+            'paper_bgcolor': 'rgba(0, 0, 0, 0)',
   };
 
     // 6. Use Plotly to plot the gauge data and layout.
